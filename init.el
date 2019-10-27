@@ -166,3 +166,20 @@ This is DEPRECATED, use %s instead." prelude-modules-file))
  (run-at-time 5 nil 'prelude-tip-of-the-day))
 
 ;;; init.el ends here
+
+;; Environment
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+
+(setq mac-option-modifier 'meta)
+(setq mac-command-modifier 'hyper)
+;; global Keybind
+(global-set-key [(hyper a)] 'mark-whole-buffer)
+(global-set-key [(hyper v)] 'yank)
+(global-set-key [(hyper c)] 'kill-ring-save)
+(global-set-key [(hyper s)] 'save-buffer)
+(global-set-key [(hyper l)] 'goto-line)
+(global-set-key [(hyper w)]
+                (lambda () (interactive) (delete-window)))
+(global-set-key [(hyper z)] 'undo)
+(global-set-key (kbd "TAB") #'company-indent-or-complete-common)
+(global-set-key (kbd "C-x g") 'magit-status)

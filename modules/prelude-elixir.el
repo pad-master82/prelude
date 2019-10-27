@@ -37,4 +37,6 @@
 
 (provide 'prelude-elixir)
 
+(add-hook 'elixir-mode-hook
+          (lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
 ;;; prelude-elixir.el ends here
